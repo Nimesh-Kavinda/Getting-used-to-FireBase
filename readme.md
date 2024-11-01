@@ -26,4 +26,4 @@ Follow these steps to set up the project:
    git clone https://github.com/nimesh-kavinda/Getting-Used-to-Firebase.git
    cd Getting-Used-to-Firebase
 
-2. **Start to Follwo Basic Firebase Instructions**
+2. **Start to follow the basic Firebase instructions**
