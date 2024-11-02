@@ -3,6 +3,8 @@
 ## Overview
 This repository provides a beginner-friendly guide to getting started with Firebase, covering its core features and usage. Firebase is a comprehensive app development platform that helps you build and scale applications with ease. This guide focuses on essential Firebase services, including authentication, real-time databases, storage, and more.
 
+This is a Crash Code For the Firebase.Remeber that if you are going to learn from this.
+
 ## Requirements
 To follow along with this guide, ensure you have the following:
 - [Node.js](https://nodejs.org/) (version 12 or higher)
