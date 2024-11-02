@@ -38,3 +38,14 @@ getDocs(colRef)
         addForm.reset();
       });
     });
+
+    const deletForm = document.querySelector(".delete");
+    deletForm.addEventListener("submit", event => {
+      event.preventDefault();
+      
+      const documentRef = doc(db, "movies", deletForm.id.value);
+      deleteDoc(documentRef)
+        .then(() => {
+          deletForm.reset();
+        });
+    });
