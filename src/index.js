@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs} from "firebase/firestore";
+import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAxfDib__VrFYO65tSK7mnd4Di7aczbfbo",
@@ -25,4 +25,16 @@ getDocs(colRef)
     })
     .catch(error => {
       console.log(error);
+    });
+
+    const addForm = document.querySelector(".add");
+    addForm.addEventListener("submit", event => {
+      event.preventDefault();
+      addDoc(colRef, {
+        name: addForm.name.value,
+        description: addForm.description.value
+      })
+      .then(() => {
+        addForm.reset();
+      });
     });
