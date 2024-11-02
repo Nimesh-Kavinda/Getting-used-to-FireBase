@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { update } from "firebase/database";
 import { getFirestore, collection, getDocs, onSnapshot, addDoc, deleteDoc, doc, query, where, orderBy, serverTimestamp, updateDoc} from "firebase/firestore";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAxfDib__VrFYO65tSK7mnd4Di7aczbfbo",
@@ -13,15 +14,16 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
+const auth = getAuth();
 const colRef = collection(db, "movies");
 const qRef = query(colRef, where("category", "==", "drama"), orderBy("createdAt"));
 
 
 
-const documentReference = doc(db, "movies", "lRq5f0NR2Efc1GKQKmz5");
-onSnapshot(documentReference, (document) => {
-  console.log(document.data(), document.id);
-});
+// const documentReference = doc(db, "movies", "lRq5f0NR2Efc1GKQKmz5");
+// onSnapshot(documentReference, (document) => {
+//   console.log(document.data(), document.id);
+// });
 
 
 getDocs(qRef)
@@ -81,3 +83,5 @@ getDocs(qRef)
         updateForm.reset();
       });
     })
+
+    
