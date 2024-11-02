@@ -17,6 +17,13 @@ const colRef = collection(db, "movies");
 const qRef = query(colRef, where("category", "==", "drama"), orderBy("createdAt"));
 
 
+
+const documentReference = doc(db, "movies", "lRq5f0NR2Efc1GKQKmz5");
+onSnapshot(documentReference, (document) => {
+  console.log(document.data(), document.id);
+});
+
+
 getDocs(qRef)
       .then(data => {
          let movies = [];
